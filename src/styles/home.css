@@ -1,0 +1,105 @@
+#home {
+    display: flex;
+    flex-direction: column; 
+    min-height: calc(100vh - 94px);
+    position: relative;
+}
+
+#cta {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 5%;
+}
+
+#cta .title { 
+    
+    font-size: 3rem;
+    color: var(--color-neutral-1);;
+}
+
+
+
+#cta .title span {
+    font-family: "Grenze", sans-serif;
+    color: #922500;
+    font-size: 6rem;
+}
+
+#cta .description {
+    font-size: 1.2rem;
+}
+
+#cta_buttons {
+    display: flex;
+    gap: 24px;
+}
+
+#cta_buttons a {
+    text-decoration: none;
+    color: var(--color-neutral-1);;
+}
+
+#phone_button {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 8px 14px;
+    font-weight: 500;
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+#phone_button button {
+    box-shadow: none;
+}
+
+
+#banner {
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    z-index: -1; 
+}
+
+#banner img {
+    height: auto; 
+    width: 100%; 
+}
+
+.title {
+    position: relative; 
+    z-index: 1; 
+}
+
+.title p{
+    font-family: "Grenze", sans-serif;
+    color: #fff;
+}
+
+@media screen and (max-width: 1170px) {
+    #home {
+        min-height: 100%;
+        padding-top: 0px;
+    }
+
+   
+    #home .shape {
+        display: none;
+    }
+
+    #cta {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #phone_button button {
+        display: none;
+    }
+}

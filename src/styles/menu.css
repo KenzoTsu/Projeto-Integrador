@@ -1,0 +1,97 @@
+#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.dish {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    gap: 18px;
+    padding: 20px;
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+#dishes a {
+    display: flex; 
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    width: 10%;
+    flex-grow: 3;
+}
+
+
+#dishes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 20px;
+}
+
+
+.dish:hover {
+    background-color: #dbdbdb;
+    transform: scale(1.05);
+}
+
+.dish-image {
+    height: 150px;
+    width: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+
+.dish-description {
+    font-family: "Poppins";
+    color: #434343;
+    text-align: justify;
+}
+.dish-title {
+    font-family: "Grenze";
+    text-align: center;
+}
+
+.dish-rate i {
+    color: var(--color-primary-6);
+}
+
+.dish-price {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+@media screen and (max-width: 1170px) {
+    #dishes {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .dish-image {
+        height: 100px;
+        border-radius: 15px;
+    }
+
+    .dish {
+        width: calc(100% - 12px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .dish {
+        width: 100%;
+    }
+
+    #menu .section-subtitle {
+        text-align: center;
+    }
+} 

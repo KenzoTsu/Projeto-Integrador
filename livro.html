@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Os Quatro Quatros - O Homem que Calculava</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grenze:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="basee.css">
+
+    <style>
+        
+
+        h1 {
+            text-align: center;
+            font-family: 'Grenze', serif;
+            font-size: 45px;
+            font-weight: 700;
+            color: #6B240C; /* Cor do título */
+            margin-bottom: 30px;
+            border-bottom: 3px solid #d4a373; /* Cor da borda do título */
+            display: inline-block;
+            padding-bottom: 10px;
+            transition: color 0.3s ease, transform 0.3s ease; /* Transição suave */
+        }
+
+        h1:hover {
+            color: #b48171; /* Cor ao passar o mouse */
+            transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff7e6; /* Cor de fundo do container */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            border: 2px solid #d4a373; /* Cor da borda do container */
+            margin-bottom: 50px;
+            align-items: center;
+            width: 100%
+        }
+
+        .text-block {
+    font-size: 22px;
+    line-height: 1.8;
+    width: 700px;
+    background-color: #e7d3bf; /* Cor de fundo do bloco de texto */
+    padding: 20px;
+    border-radius: 10px;
+    color: #3d2b1f; /* Cor do texto no bloco */
+    margin: -8px 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #6B240C; /* Cor da borda do bloco de texto */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+.text-block h2 {
+    font-family: 'Grenze', serif;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #6B240C; /* Cor do título */
+    padding-bottom: 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.text-block h2:hover {
+    color: #b48171; /* Cor ao passar o mouse sobre o título */
+}
+
+.text-block.full-width {
+    width: 100%;
+    margin: 25px 0;
+    padding: 20px;
+}
+
+.text-block-loose {
+    font-size: 22px;
+    line-height: 1.8;
+    width: 100%;
+    padding: 20px;
+    color: #3d2b1f;
+    margin: 25px 0;
+    text-align: justify;
+}
+        
+        .img-block {
+            text-align: center;
+            margin: 30px 0;
+            margin-right: 20px;
+        }
+
+        .img-block img {
+            max-width: 100%;
+            height: auto;
+            width: 500px;
+            max-width: 250px;
+            max-height: 300px;
+            margin: -30px 0;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border: 3px solid #6B240C; /* Cor da borda da imagem */
+            transition: transform 0.3s ease; /* Adicionando transição suave para a imagem */
+        }
+
+        .row-alternate {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .row-alternate:nth-child(even) .text-block {
+            order: 1;
+        }
+
+        .math-expression {
+            font-family: 'Courier New', monospace;
+            background-color: #40290a; /* Cor de fundo da expressão matemática */
+            color: #f4f3ee; /* Cor do texto da expressão matemática */
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* Efeitos de Hover */
+        .text-block:hover {
+            background-color: #e0bd9b; /* Cor de fundo ao passar o mouse */
+            transform: translateY(-5px); /* Levanta o bloco ao passar o mouse */
+        }
+
+        .img-block img:hover {
+            transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
+        }
+
+        /* IMG Background
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('arabesque-pattern.png');
+            opacity: 0.1;
+            z-index: -1;
+        } */
+
+        @media (max-width: 768px) {
+            .row-alternate {
+                flex-direction: column;
+            }
+
+            .text-block, .img-block {
+                width: 100%;
+            }
+        }
+        .row-alternate {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.text-block {
+    flex: 1;
+    margin-right: 20px; /* Espaço entre os blocos */
+}
+
+.text-block:last-child {
+    margin-right: 0; /* Remove margem direita do último bloco */
+}
+
+@media (max-width: 768px) {
+    .row-alternate {
+        flex-direction: column;
+    }
+
+    .text-block {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+    /* Estilos para o contêiner que posiciona os dois divs lado a lado */
+.side-by-side-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Espaçamento entre os blocos */
+    margin-bottom: 40px; /* Espaçamento inferior para separar dos outros conteúdos */
+}
+
+/* Ajustes para os blocos dentro do contêiner */
+.side-by-side-container .text-block.full-width,
+.side-by-side-container .text-block-loose {
+    flex: 1; /* Cada bloco ocupa igualmente o espaço disponível */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .side-by-side-container {
+        flex-direction: column;
+    }
+}
+/* Estilos para o contêiner que coloca três blocos lado a lado */
+.three-part-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Espaçamento entre os blocos */
+    margin-bottom: 40px; /* Espaçamento inferior */
+}
+
+/* Ajustes para os blocos internos */
+.three-part-container .text-block {
+    flex: 1; /* Cada bloco ocupa igualmente o espaço disponível */
+    padding: 10px; /* Adiciona espaçamento interno */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .three-part-container {
+        flex-direction: column;
+    }
+
+    .three-part-container .text-block {
+        width: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-c">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+            
+        <a href="livro-en.html" class="translation">
+            <img src="src/images/translation.png" alt="" style="width: 50px; height: 50px;"/>
+        </a>
+
+        <div class="dropdown">
+            <button class="menu" onclick="toggleDropdown()">
+                <img src="img/menu.png" alt="Menu">
+            </button>
+            <div class="dropdown-content">
+                <div class="button">
+                    <a href="menu.html">Menu</a>
+                </div>
+                <div class="button">
+                    <a href="problema1.html">Problema 1</a>
+                </div>
+                <div class="button">
+                    <a href="problema2.html">Problema 2</a>
+                </div>
+                <div class="button">
+                    <a href="problema3.html">Problema 3</a>
+                </div>
+                <div class="button">
+                    <a href="problema4.html">Problema 4</a>
+                </div>
+                <div class="button">
+                    <a href="biografia.html">Biografia Autor</a>
+                </div>
+                <div class="button">
+                    <a href="Livro.html">Sobre o Livro</a>
+                </div>
+                <div class="button">
+                    <a href="curiosidade.html">Curiosidades</a>
+                </div>
+                <div class="button">
+                    <a href="contato3.html">Contato</a>
+                </div>
+                <div class="button">
+                    <a href="sobre.html">Sobre Nós</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>O Homem que Calculava</h1>
+
+        <!-- Primeira parte em full -->
+        <div class="text-block-loose">
+            No livro <em>"O Homem que Calculava"</em>, escrito por Malba Tahan e publicado pela primeira vez em 1938. A obra combina matemática, aventura e filosofia, abordando conceitos numéricos de maneira criativa e acessível. O enredo é ambientado no Oriente Médio e narra as histórias e aventuras de Beremiz Samir, um jovem persa dotado de incrível habilidade matemática.
+        </div>
+
+        <!-- Primeira linha (Texto à esquerda, imagem à direita) -->
+        <div class="row-alternate">
+            <div class="text-block">
+                <h2>Enredo</h2>
+                O enredo segue Beremiz e seu companheiro, Hank-Tade-Mai, enquanto viajam para Bagdá. Ao longo do caminho, o protagonista usa suas habilidades numéricas para resolver disputas, decifrar enigmas e conquistar a confiança de poderosos governantes. Cada capítulo oferece desafios que Beremiz supera com inteligência, mostrando como a matemática pode ser uma ferramenta prática e transformadora na vida das pessoas.
+            </div>
+            <div class="img-block">
+                <img src="bagda.jpg">
+                <p><em>Exemplo de uma imagem.</em></p>
+            </div>
+        </div>
+
+        <!-- Segunda linha (Imagem à esquerda, texto à direita) -->
+        <!-- Terceira linha (Texto à esquerda, imagem à direita) -->
+
+
+
+
+        <!-- Quarta linha (Imagem à esquerda, texto à direita) -->
+        <div class="row-alternate">
+            <div class="img-block">
+                <img src="palacios.jpg" alt="#">
+                <p><em>Exemplo de uma imagem.</em></p>
+            </div>
+            <div class="text-block">
+                <h2>Desenvolvimento</h2>
+                Chegando em Bagdá, Beremiz rapidamente chama a atenção de figuras poderosas, incluindo o califa e seus conselheiros. Ele é convidado para solucionar problemas complexos e responder a desafios intelectuais que testam suas habilidades matemáticas e filosóficas. Em uma das passagens, ele enfrenta um grupo de matemáticos da corte, resolvendo uma série de problemas que vão desde a aritmética simples até questões de lógica e geometria.
+            </div>
+        </div>
+
+        
+        <div class="row-alternate">
+            <div class="text-block">
+                <h2>Desfecho</h2>
+                Além de suas aventuras matemáticas, Beremiz também vive momentos de introspecção e filosofia. Ele é frequentemente confrontado com questões morais e éticas, e sua sabedoria vai além dos números. Ele é uma figura serena, que preza pela justiça, harmonia e pela aplicação do conhecimento para o bem comum.            </div>
+            <div class="img-block">
+                <img src="bagda.jpg">
+                <p><em>Exemplo de uma imagem.</em></p>
+            </div>
+        </div>
+        
+        </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Direitos Reservados Areia do Infinito</p>
+    </footer>
+
+    <div id="animation-overlay"></div>
+    <div class="dot"></div>
+    <div id="loading-overlay">
+        <div class="ball"></div>
+    </div>
+
+    <script src="basee.js"></script>
+</body>
+</html>
