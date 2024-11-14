@@ -1,0 +1,225 @@
+        /* Reset Estilo */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            text-decoration: none;
+        }
+
+        html{
+            scroll-behavior: smooth; /* Faz o scroll do site mais suave */
+            overflow-x: hidden;
+        }
+
+        /* Body */
+        body {
+            background-color: #f4f3ee; /* Cor de fundo */
+            color: #3d2b1f; /* Cor do texto */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin-top: 50px;
+            transition: background-color 0.5s ease; /* Também faz o scroll do site mais suave */
+        }
+        
+
+        /* Navegação */
+        nav {
+            background-color: #6b240c;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed; 
+            top: 0;
+            width: 100%;
+            height: 70px;
+            border-bottom: 3.5px solid #000;
+            z-index: 1000;
+        }
+
+        /* Logo */
+        .logo-c img {
+            height: 60px;
+        }
+
+        /* Menu Navegação */
+        .menu img {
+            height: 35px;
+            transition: 0.3s;
+            z-index: 99999;
+        }
+
+        /* Mudar IMG */
+        .menu:hover img {
+            transform: scale(1.05);
+            transition: 0.3s ease;
+            z-index: 99999;
+        }
+
+        .menu {
+            background-color: transparent;
+            border: none;
+            cursor: pointer; /* Muda Cursor*/
+            z-index: 99999;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+            z-index: 1100;
+        }
+        
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: -10px;
+            top: 100%; /* Posiciona abaixo button */
+            background-color: #6b240c;
+            min-width: 280px;
+            max-height: 450px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            border: 3.5px solid #000000;
+            transition: border-color 0.5s ease;
+            z-index: 1200;
+            margin-top: 16px;
+            overflow: hidden;
+        }
+
+        .dropdown.active .dropdown-content {
+            display: block;
+            animation: slideInRight 0.75s ease-in-out;
+                }
+
+                @keyframes slideInRight {
+                    0% {
+                      transform: translateX(100%); /* Começa fora da tela, à direita */
+                      opacity: 0;
+                    }
+                    100% {
+                      transform: translateX(0); /* Volta para a posição original */
+                      opacity: 1;
+                    }
+                  }
+
+        /* Dropdown Button */
+        .button {
+            display: block;
+            border-bottom: 1.5px solid rgba(0, 0, 0, 1);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            box-sizing: border-box;
+            text-align: center;
+            height: 44.5px;
+        }
+
+        .button a {
+            display: block;
+            font-family: 'Grenze', sans-serif;
+            font-size: 20px;
+            color: white;
+            padding: 6px 0px;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Adicionando transições suaves */
+        }
+
+        .button a:hover {
+            background-color: #ffee82; 
+            color: #6b240c;             
+            transition: 0.5s ease;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #6b240c;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            border-top: 3.5px solid #000;
+            z-index: 1000; /* Faz ele ficar por cima de Tudo */
+        }
+
+        .footer p {
+            text-align: center;
+            font-family: 'Grenze', sans-serif;
+            line-height: 20px;
+            font-size: 20px;
+        }
+
+
+        .dot {
+            position: absolute;
+            width: 20px; /* Largura da bolinha */
+            height: 20px; /* Altura da bolinha */
+            background-color: #6b240c; /* Cor da bolinha */
+            border-radius: 50%; /* Faz a bolinha ser circular */
+            pointer-events: none; /* Ignora eventos do mouse */
+            transition: transform 0.1s; /* Suaviza o movimento */
+            z-index: 999999;
+        }
+
+        /* Animação de carregamento (tela cheia vermelha com uma bola) */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease; /* Transição para desaparecer suavemente */
+}
+
+
+
+/* Recolher */
+#loading-overlay.hide {
+    opacity: 0;
+    visibility: hidden; /* Para remover a visibilidade após a transição */
+}
+/* Configuração de encolher a página */
+#loading-overlay .ball {
+    width: 200px; /* Tamanho inicial grande */
+    height: 200px;
+    background-color: #6b240c; /* Cor da bolinha */
+    border-radius: 50%; /* Para manter a forma circular */
+    animation: shrinkBall 1s ease forwards; /* Animação para encolher a bola */
+}
+/* Animação que encolhe a bola */
+@keyframes shrinkBall {
+    0% {
+        transform: scale(15); /* Tamanho normal */
+    }
+    100% {
+        transform: scale(0); /* Encolhe para desaparecer */
+    }
+}
+
+
+/* Centraliza a bola no ponto de clique */
+#animation-overlay.active {
+    transform: scale(30000); /* Expande a bola */
+    transform-origin: center;
+}
+/* Configuração da entrada da expansão que aparece no ponteiro do mouse */
+#animation-overlay {
+    position: fixed;
+    width: 20px; /* Tamanho inicial pequeno */
+    height: 20px;
+    background-color: #6b240c; /* Cor da bolinha */
+    border-radius: 50%; /* Faz a bolinha ser circular */
+    transform: scale(0); /* Inicia invisível */
+    transition: transform 40s ease; /* Animação de expansão */
+    pointer-events: none; /* Ignora eventos do mouse */
+    z-index: 10000;
+}

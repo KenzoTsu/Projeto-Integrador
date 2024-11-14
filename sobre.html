@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grenze:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS BASE -->
+    <link rel="stylesheet" href="basee.css">
+    <style>
+        
+        .team-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; /* Permite que os membros da equipe se ajustem em várias linhas se necessário */
+            margin: 50px 0; /* Espaçamento acima e abaixo */
+        }
+        .member {
+            text-align: center; /* Centraliza o texto */
+            margin: 20px; /* Espaçamento entre os membros */
+            width: 220px; /* Largura fixa para cada membro */
+            transition: transform 0.3s; /* Animação ao passar o mouse */
+            padding: 10px;
+        }
+        .member:hover {
+            transform: scale(1.1); /* Aumenta todo o .member ao passar o mouse */
+        }
+        .member img {
+            border-radius: 50%; /* Faz a imagem ficar redonda */
+            width: 200px; /* Ajuste a largura da imagem conforme necessário */
+            height: 160px; /* Mantém a altura igual à largura para manter a forma */
+            border: 3.5px solid #6b240c; /* Borda da imagem */
+            transition: transform 0.3s, box-shadow 0.3s; /* Transição para animação */
+        }
+        .member:hover img {
+            box-shadow: 0 0 20px rgba(107, 36, 12, 0.8); /* Sombra ao passar o mouse */
+        }
+        .member h3 {
+            margin: 10px 0 5px; /* Margens para o nome */
+            color: #6b240c; /* Cor do nome */
+            transition: transform 0.3s, box-shadow 0.3s; /* Transição para animação */
+        }
+        .member p {
+            color: #333; /* Cor da frase abaixo do nome */
+            font-style: italic; /* Estilo itálico para a frase */
+            transition: transform 0.3s, box-shadow 0.3s; /* Transição para animação */
+        }
+
+        .text {
+            font-size: 22px;
+            line-height: 1.8;
+            background-color: #e7d3bf; /* Cor de fundo do bloco de texto */
+            padding: 20px;
+            border-radius: 10px;
+            color: #3d2b1f; /* Cor do texto no bloco */
+            margin: 0px 80px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #6B240C; /* Cor da borda do bloco de texto */
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Adicionando transições suaves */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .text:hover {
+            background-color: #e0bd9b; /* Cor de fundo ao passar o mouse */
+            transform: translateY(-5px); /* Levanta o bloco ao passar o mouse */
+        }
+
+    </style>
+    
+</head>
+<body>
+    <nav>
+        <div class="logo-c">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+            
+        <a href="sobre-en.html" class="translation">
+            <img src="src/images/translation.png" alt="" style="width: 50px; height: 50px;"/>
+        </a>
+
+        <div class="dropdown">
+            <button class="menu" onclick="toggleDropdown()">
+                <img src="img/menu.png" alt="Menu">
+            </button>
+            <div class="dropdown-content">
+                <div class="button">
+                    <a href="menu.html">Menu</a>
+                </div>
+                <div class="button">
+                    <a href="problema1.html">Problema 1</a>
+                </div>
+                <div class="button">
+                    <a href="problema2.html">Problema 2</a>
+                </div>
+                <div class="button">
+                    <a href="problema3.html">Problema 3</a>
+                </div>
+                <div class="button">
+                    <a href="problema4.html">Problema 4</a>
+                </div>
+                <div class="button">
+                    <a href="biografia.html">Biografia Autor</a>
+                </div>
+                <div class="button">
+                    <a href="Livro.html">Sobre o Livro</a>
+                </div>
+                <div class="button">
+                    <a href="curiosidade.html">Curiosidades</a>
+                </div>
+                <div class="button">
+                    <a href="contato3.html">Contato</a>
+                </div>
+                <div class="button">
+                    <a href="sobre.html">Sobre Nós</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="team-container">
+        <div class="member">
+            <img src="img/joao.png" alt="João Henrique">
+            <h3>João Henrique</h3>
+            <p>"Matemática é a linguagem do mundo."</p>
+        </div>
+        <div class="member">
+            <img src="img/kenzo.png" alt="Kenzo Umetsu">
+            <h3>Kenzo Umetsu</h3>
+            <p>"Cada problema tem sua solução."</p>
+        </div>
+        <div class="member">
+            <img src="img/lara.png" alt="Lara Motta">
+            <h3>Lara Motta</h3>
+            <p>"A criatividade é a chave do conhecimento."</p>
+        </div>
+        <div class="member">
+            <img src="img/maria.png" alt="Maria Eduarda">
+            <h3>Maria Eduarda</h3>
+            <p>"Saber matemática é conhecer o universo."</p>
+        </div>
+        <div class="member">
+            <img src="img/vinicius.png" alt="Vinícius Gabriel">
+            <h3>Vinícius Farias</h3>
+            <p>"A matemática é a música da razão."</p>
+        </div>
+    </div>
+
+    <div class="text">
+        <p>Obrigado por visitar nossa página! 😊 Esperamos que tenha gostado.</p>
+        <p>Desenvolvido com ❤️ por &copy;Areia do Infinito.</p>
+        <p>Café é o código da vida!!! ☕</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Direitos Reservados Areia do Infinito</p>
+    </footer>
+
+    <div id="animation-overlay"></div>
+    <div class="dot"></div>
+    <div id="loading-overlay">
+        <div class="ball"></div>
+    </div>
+
+    <script src="basee.js"></script>
+</body>
+</html>

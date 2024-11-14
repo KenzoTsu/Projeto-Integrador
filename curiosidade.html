@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curiosidades sobre 'O Homem que Calculava'</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grenze:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="basee.css">
+
+    <style>
+        
+
+        h1 {
+            text-align: center;
+            font-size: 45px;
+            width: 500px;
+            font-family: 'Grenze', serif;
+            font-weight: 700;
+            color: #6B240C; /* Cor do título */
+            margin-bottom: 30px;
+            border-bottom: 3px solid #d4a373; /* Cor da borda do título */
+            display: inline-block;
+            padding-bottom: 10px;
+            transition: color 0.3s ease, transform 0.3s ease; /* Transição suave */
+        }
+
+        h1:hover {
+            color: #b48171; /* Cor ao passar o mouse */
+            transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: center; /* Espaça o h1 e a imagem */
+            align-items: center; /* Alinha verticalmente ao centro */
+            margin-bottom: 30px; /* Espaço abaixo do cabeçalho */
+        }
+
+        .header-img {
+            max-width: auto; /* Ajuste a largura da imagem conforme necessário */
+            height: auto; /* Manter a proporção da imagem */
+            border-radius: 10px; /* Adiciona bordas arredondadas, se desejar */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra para a imagem */
+            align-items: center;
+            width: 100%;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff7e6; /* Cor de fundo do container */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            border: 2px solid #d4a373; /* Cor da borda do container */
+            margin-bottom: 50px;
+            align-items: center;
+        }
+        
+        .card {
+    position: relative; /* Adiciona posicionamento relativo ao card */
+    background-color: #e7d3bf; /* Cor de fundo do cartão */
+    color: #3d2b1f; /* Cor do texto */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 40px 20px 20px; /* Espaçamento interno */
+    margin: 30px 20px; /* Espaçamento externo */
+    width: 46.5%; /* Ajustar largura */
+    display: inline-block; /* Exibe em linha */
+    vertical-align: top; /* Alinha ao topo */
+    transition: transform 0.3s ease; /* Efeito de transição */
+    border: 1px solid #6B240C;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-5px); /* Efeito ao passar o mouse */
+}
+
+.card-title {
+    position: absolute; /* Posiciona o título de forma absoluta */
+    font-size: 20px;
+    line-height: 20px;
+    top: -20px; /* Ajusta a posição do título */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    background-color: #40290a; /* Cor de fundo do título */
+    color: #ffffff; /* Cor do texto do título */
+    text-align: center; /* Centraliza o título */
+    padding: 10px 0; /* Espaçamento interno do título */
+    outline: 1px solid #6B240C;
+    border-radius: 10px 10px 0 0; /* Bordas arredondadas na parte superior */
+} 
+
+.card p{
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+        .text-block-loose {
+            font-size: 22px;
+            line-height: 1.8;
+            width: 100%;
+            padding: 20px;
+            color: #3d2b1f;
+            margin: 25px 0;
+            text-align: justify;
+        }
+
+        .img-block {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .img-block img {
+            background-color: #40290a;
+            max-width: 100%;
+            height: auto;
+            width: 900px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border: 3px solid #6B240C; /* Cor da borda da imagem */
+            transition: transform 0.3s ease; /* Adicionando transição suave para a imagem */
+        }
+
+        .img-block img:hover {
+            transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
+        }
+
+        @media (max-width: 768px) {
+    .card {
+        width: calc(100% - 40px); /* Largura total em telas pequenas */
+    }
+}        
+
+@media (max-width: 1024px) {
+    .card {
+        width: calc(100% - 40px); /* Largura total em telas pequenas */
+    }
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-c">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+            
+        <a href="curiosidade-en.html" class="translation">
+            <img src="src/images/translation.png" alt="" style="width: 50px; height: 50px;"/>
+        </a>
+
+        <div class="dropdown">
+            <button class="menu" onclick="toggleDropdown()">
+                <img src="img/menu.png" alt="Menu">
+            </button>
+            <div class="dropdown-content">
+                <div class="button">
+                    <a href="menu.html">Menu</a>
+                </div>
+                <div class="button">
+                    <a href="problema1.html">Problema 1</a>
+                </div>
+                <div class="button">
+                    <a href="problema2.html">Problema 2</a>
+                </div>
+                <div class="button">
+                    <a href="problema3.html">Problema 3</a>
+                </div>
+                <div class="button">
+                    <a href="problema4.html">Problema 4</a>
+                </div>
+                <div class="button">
+                    <a href="biografia.html">Biografia Autor</a>
+                </div>
+                <div class="button">
+                    <a href="Livro.html">Sobre o Livro</a>
+                </div>
+                <div class="button">
+                    <a href="curiosidade.html">Curiosidades</a>
+                </div>
+                <div class="button">
+                    <a href="contato3.html">Contato</a>
+                </div>
+                <div class="button">
+                    <a href="sobre.html">Sobre Nós</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header-flex">
+            <h1>Algumas Curiosidades sobre 'O Homem que Calculava'</h1>
+        </div>
+
+        <div class="text-block-loose">
+            "O Homem que Calculava" é muito mais do que um livro de histórias matemáticas; ele é recheado de curiosidades que enriquecem a narrativa e nos fazem enxergar a matemática por uma perspectiva completamente nova. Cada capítulo traz surpresas sobre a vida, a cultura e os mistérios do mundo árabe, além de apresentar lições matemáticas de forma envolvente. Viemos listar algumas dessas curiosidades para mostrar como esse livro vai além da matemática e se conecta com a história, a educação e o cotidiano de forma única.
+        </div>        
+
+        <div class="img-block">
+            <img src="img/curiosidade-a.png" alt="#">
+        </div>
+
+        <div class="card">
+            <h2 class="card-title"><strong>1. O Pseudônimo do Autor:</strong></h2></h2>
+            <p>O autor do livro, Malba Tahan, usou um pseudônimo que reflete sua admiração pela cultura árabe. Ele acreditava que um professor brasileiro não chamaria a atenção no universo árabe, onde se passa a história.</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title"><strong>2. Lendas e Histórias Pitorescas:</strong></h2>
+            <p>A obra inclui diversas lendas e histórias fascinantes, como a origem do jogo de xadrez e a vida da filósofa e matemática Hipátia de Alexandria, que contribuíram para a história da matemática e da ciência.</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title"><strong>3. Publicação e Traduções:</strong></h2>
+            <p>Publicada pela primeira vez em 1938, a obra já foi traduzida para vários idiomas, tornando-se um verdadeiro clássico da literatura matemática e educacional em todo o mundo com seu conteúdo rico e envolvente.</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title"><strong>4. Influência Educacional:</strong></h2>
+            <p>O livro é amplamente utilizado em escolas e por educadores para ensinar matemática de forma lúdica e inspiradora, demonstrando que a matemática pode ser acessível e divertida.</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title"><strong>5. A Matemática como Lazer:</strong></h2>
+            <p>Malba Tahan ilustra como a matemática pode ser uma atividade prazerosa e criativa. As histórias demonstram que é possível resolver problemas matemáticos de maneira divertida e envolvente.</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title"><strong>6. Mistério e Aventura:</strong></h2>
+            <p>As histórias do livro não são apenas sobre matemática, mas também envolvem mistério e aventura. Isso torna a leitura mais cativante, atraindo leitores de diferentes idades a tornando mais rica e cativante.</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title"><strong>7. A Vida de Malba Tahan:</strong></h2>
+            <p>Malba Tahan, cujo nome verdadeiro é Julio Cesar de Mello e Souza, foi um educador e escritor apaixonado pela matemática. Ele dedicou sua vida a ensinar e inspirar gerações com suas obras.</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title"><strong>8. O Legado do Livro:</strong></h2>
+            <p>Através de 'O Homem que Calculava', Tahan deixou um legado duradouro no campo da educação matemática, influenciando não apenas estudantes, mas também professores e educadores ao redor do mundo.</p>
+        </div>
+
+        <div class="img-block">
+            <img src="img/curiosidade-b.png" alt="#">
+        </div>
+
+        <div class="text-block-loose">
+            Essas curiosidades são parte essencial da construção de "O Homem que Calculava", tornando-o uma obra multifacetada que inspira, ensina e diverte ao mesmo tempo. A combinação de matemática com cultura, lendas e histórias de aventura é o que faz deste livro um clássico atemporal, cativando gerações de leitores e mostrando que a matemática pode, sim, ser fascinante. Essas são apenas algumas das pérolas que compõem a grandeza dessa obra imortal.
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Direitos Reservados Areia do Infinito</p>
+    </footer>
+
+    <div id="animation-overlay"></div>
+    <div class="dot"></div>
+    <div id="loading-overlay">
+        <div class="ball"></div>
+    </div>
+
+    <script src="basee.js"></script>
+</body>
+</html>
