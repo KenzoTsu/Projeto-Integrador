@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grenze:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS BASE -->
+    <link rel="stylesheet" href="basee.css">
+    <style>
+        /* Estilos do corpo */
+        body {
+            max-height: 100%;
+        }
+
+        /* Contêiner principal para texto e formulário */
+        .container {
+            display: flex; /* Flexbox para dividir em duas colunas */
+            width: 100%; /* Largura total do contêiner */
+            max-width: 1920px; /* Limite de largura para telas grandes */
+            align-items: center;
+        }
+
+        /* Estilos do texto à esquerda */
+        .container1 {
+            flex: 0.8; /* Ocupa metade do espaço */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centraliza verticalmente */
+            width: 400px;
+            margin-left: 50px;
+        }
+
+        .container1 h1 {
+            color: rgb(68, 67, 67); /* Cor do texto */
+            font-size: 80px; /* Aumentando o tamanho da fonte */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-top: 30px;
+            line-height: 0.85;
+            transition: color 0.3s ease, transform 0.3s ease; /* Transição suave */
+        }
+
+        .container1 h2 {
+            color: #6b240c; /* Cor do texto */
+            font-size: 80px; /* Aumentando o tamanho da fonte */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 0.80;
+            margin-top: 10px;
+            transition: color 0.3s ease, transform 0.3s ease; /* Transição suave */
+        }
+
+        h1:hover, h2:hover {
+            transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+        }
+
+        .contact-info {
+            font-size: 15px; /* Tamanho da fonte */
+            width: 350px;
+            text-align: left;
+            margin-top: 100px; /* Espaçamento acima do texto */
+            color: rgb(68, 67, 67); /* Cor do texto, ajuste se necessário */
+        }
+        
+        .contact-image {
+            max-width: 40px; /* Ajuste a largura máxima conforme necessário */
+            border-radius: 50%;
+            display: block;
+            margin: 0 130px;
+        }
+
+        /* Estilos do formulário */
+        .container2 {
+            background: transparent; /* Fundo do formulário */
+            padding: 20px;
+            width: 600px; /* Ajuste a largura conforme necessário */
+            flex: 1.2; /* Ocupa metade do espaço */
+            margin-left: 20px; /* Espaçamento à esquerda do formulário */
+            margin-top: 75px;
+            min-height: 300px; /* Ajuste a altura mínima conforme necessário */
+        }
+
+        .container2 h3 {
+            color: rgb(68, 67, 67);
+            font-size: 35px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        hr {
+            margin: 20px 0; /* Espaço acima e abaixo da linha */
+            border: none; /* Remove a borda padrão */
+            height: 2px; /* Altura da linha */
+            background-color: #6b240c; /* Cor da linha */
+        }
+
+        .form-group {
+            position: relative; /* Para posicionar o pseudo-elemento */
+            flex: 1; /* Permite que os grupos de entrada ocupem espaço igual */
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: transparent;
+            width: 100%; /* Faz os campos ocuparem toda a largura */
+            padding: 10px; /* Adiciona espaço interno */
+            font-size: 16px; /* Aumenta o tamanho da fonte */
+            margin-bottom: 15px; /* Espaçamento inferior entre os campos */
+            border: none; /* Remove a borda padrão */
+            outline: none; /* Remove o contorno padrão ao focar */
+        }
+
+        /* Linha abaixo dos inputs */
+        .form-group::after {
+            content: ""; /* Necessário para criar um pseudo-elemento */
+            display: block; /* Faz a linha ser um bloco */
+            width: 100%; /* Largura total da linha */
+            height: 2px; /* Altura da linha */
+            background-color: #9a9999; /* Cor padrão da linha (cinza) */
+            position: absolute; /* Posiciona a linha */
+            bottom: 0; /* Fica na parte inferior do campo */
+            left: 0; /* Alinhado à esquerda */
+        }
+
+        /* Cor da linha quando o input é focado */
+        .form-group input:focus ~ ::after,
+        .form-group textarea:focus ~ ::after {
+            background-color: #ff0303; /* Cor da linha ao focar (vermelho) */
+        }
+
+        .input-group {
+            display: flex; /* Usando flexbox para disposição lado a lado */
+            gap: 10px; /* Espaçamento entre os campos */
+        }
+
+        .input-group input {
+            flex: 1; /* Faz cada campo ocupar o espaço restante igualmente */
+            min-width: 0; /* Impede que os campos excedam o espaço disponível */
+        }
+
+        ::placeholder {
+            color: #888; /* Cor do placeholder */
+            font-style: italic; /* Estilo do texto */
+        }
+
+        .submit-button {
+            width: 100%;
+            margin-top: 40px;
+            padding: 10px 0;
+            background: #6b240c;
+            color: #fff;
+            border: 0;
+            outline: none;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .submit-button:hover {
+            background-color: #b48171; /* Cor ao passar o mouse */
+            border: 2px solid rgb(131, 80, 62);
+        }
+
+        .pop{
+            width: 400px;
+            background: #fff;
+            border-radius: 6px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1); 
+            text-align: center;
+            padding: 0 30px 30px;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+        }
+
+        .open-popup{
+            visibility: visible;
+            top: 70%;
+            transform: translate(-50%, -50%) scale(1); 
+        }
+
+        .pop img{
+            width:100px;
+            margin-top: -50px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .pop h2{
+            font-size: 38px;
+            font-weight: 500;
+            margin: 30px 0 10px; 
+        }
+
+        .botao{
+            width: 100%;
+            margin-top: 50px;
+            padding: 10px 0;
+            background: #6b240c;
+            color: #fff;
+            border: 0;
+            outline: none;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .botao :hover {
+            background-color: #b48171; /* Cor ao passar o mouse */
+            border: 2px solid rgb(131, 80, 62);
+        }
+                /* Reset Estilo */
+                * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            text-decoration: none;
+        }
+
+        html{
+            scroll-behavior: smooth; /* Faz o scroll do site mais suave */
+            overflow-x: hidden;
+        }
+
+        /* Body */
+        body {
+            background-color: #f4f3ee; /* Cor de fundo */
+            color: #3d2b1f; /* Cor do texto */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin-top: 50px;
+            transition: background-color 0.5s ease; /* Também faz o scroll do site mais suave */
+        }
+        
+
+        /* Navegação */
+        nav {
+            background-color: #6b240c;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed; 
+            top: 0;
+            width: 100%;
+            height: 70px;
+            border-bottom: 3.5px solid #000;
+            z-index: 1000;
+        }
+
+        /* Logo */
+        .logo-c img {
+            height: 60px;
+        }
+
+        /* Menu Navegação */
+        .menu img {
+            height: 35px;
+            transition: 0.3s;
+            z-index: 99999;
+        }
+
+        /* Mudar IMG */
+        .menu:hover img {
+            transform: scale(1.05);
+            transition: 0.3s ease;
+            z-index: 99999;
+        }
+
+        .menu {
+            background-color: transparent;
+            border: none;
+            cursor: pointer; /* Muda Cursor*/
+            z-index: 99999;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+            z-index: 1100;
+        }
+        
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: -10px;
+            top: 100%; /* Posiciona abaixo button */
+            background-color: #6b240c;
+            min-width: 280px;
+            max-height: 450px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            border: 3.5px solid #000000;
+            transition: border-color 0.5s ease;
+            z-index: 1200;
+            margin-top: 16px;
+            overflow: hidden;
+        }
+
+        .dropdown.active .dropdown-content {
+            display: block;
+            animation: slideInRight 0.75s ease-in-out;
+                }
+
+                @keyframes slideInRight {
+                    0% {
+                      transform: translateX(100%); /* Começa fora da tela, à direita */
+                      opacity: 0;
+                    }
+                    100% {
+                      transform: translateX(0); /* Volta para a posição original */
+                      opacity: 1;
+                    }
+                  }
+
+        /* Dropdown Button */
+        .button {
+            display: block;
+            border-bottom: 1.5px solid rgba(0, 0, 0, 1);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            box-sizing: border-box;
+            text-align: center;
+            height: 44.5px;
+        }
+
+        .button a {
+            display: block;
+            font-family: 'Grenze', sans-serif;
+            font-size: 20px;
+            color: white;
+            padding: 6px 0px;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Adicionando transições suaves */
+        }
+
+        .button a:hover {
+            background-color: #ffee82; 
+            color: #6b240c;             
+            transition: 0.5s ease;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #6b240c;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            border-top: 3.5px solid #000;
+            z-index: 1000; /* Faz ele ficar por cima de Tudo */
+        }
+
+        .footer p {
+            text-align: center;
+            font-family: 'Grenze', sans-serif;
+            line-height: 20px;
+            font-size: 20px;
+        }
+
+
+        .dot {
+            position: absolute;
+            width: 20px; /* Largura da bolinha */
+            height: 20px; /* Altura da bolinha */
+            background-color: #6b240c; /* Cor da bolinha */
+            border-radius: 50%; /* Faz a bolinha ser circular */
+            pointer-events: none; /* Ignora eventos do mouse */
+            transition: transform 0.1s; /* Suaviza o movimento */
+            z-index: 999999;
+        }
+
+        /* Animação de carregamento (tela cheia vermelha com uma bola) */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease; /* Transição para desaparecer suavemente */
+}
+
+
+
+/* Recolher */
+#loading-overlay.hide {
+    opacity: 0;
+    visibility: hidden; /* Para remover a visibilidade após a transição */
+}
+/* Configuração de encolher a página */
+#loading-overlay .ball {
+    width: 200px; /* Tamanho inicial grande */
+    height: 200px;
+    background-color: #6b240c; /* Cor da bolinha */
+    border-radius: 50%; /* Para manter a forma circular */
+    animation: shrinkBall 1s ease forwards; /* Animação para encolher a bola */
+}
+/* Animação que encolhe a bola */
+@keyframes shrinkBall {
+    0% {
+        transform: scale(15); /* Tamanho normal */
+    }
+    100% {
+        transform: scale(0); /* Encolhe para desaparecer */
+    }
+}
+
+
+/* Centraliza a bola no ponto de clique */
+#animation-overlay.active {
+    transform: scale(30000); /* Expande a bola */
+    transform-origin: center;
+}
+/* Configuração da entrada da expansão que aparece no ponteiro do mouse */
+#animation-overlay {
+    position: fixed;
+    width: 20px; /* Tamanho inicial pequeno */
+    height: 20px;
+    background-color: #6b240c; /* Cor da bolinha */
+    border-radius: 50%; /* Faz a bolinha ser circular */
+    transform: scale(0); /* Inicia invisível */
+    transition: transform 40s ease; /* Animação de expansão */
+    pointer-events: none; /* Ignora eventos do mouse */
+    z-index: 10000;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-c">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        <a href="contato3-en.html" class="translation">
+            <img src="src/images/translation.png" alt="" style="width: 50px; height: 50px;"/>
+        </a>
+        
+        <div class="dropdown">
+            <button class="menu" onclick="toggleDropdown()">
+                <img src="img/menu.png" alt="Menu">
+            </button>
+            <div class="dropdown-content">
+                <div class="button">
+                    <a href="menu-en.html">Home</a>
+                </div>
+                <div class="button">
+                    <a href="problema1-en.html">Problem 1</a>
+                </div>
+                <div class="button">
+                    <a href="problema2-en.html">Problem 2</a>
+                </div>
+                <div class="button">
+                    <a href="problema3-en.html">Problem 3</a>
+                </div>
+                <div class="button">
+                    <a href="problema4-en.html">Problem 4</a>
+                </div>
+                <div class="button">
+                    <a href="biografia-en.html">Biography Author</a>
+                </div>
+                <div class="button">
+                    <a href="Livro-en.html">About the Book</a>
+                </div>
+                <div class="button">
+                    <a href="curiosidade-en.html">Curiosities</a>
+                </div>
+                <div class="button">
+                    <a href="contato3-en.html">Contact</a>
+                </div>
+                <div class="button">
+                    <a href="sobre-en.html">About us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container"> <!-- Contêiner principal -->
+        <div class="container1">
+            <h1>Quer falar conosco?</h1>
+            <h2>Entre em contato.</h2>
+            <p class="contact-info">
+                <strong>Quer enviar uma mensagem diretamente?</strong><br>
+                Envie-nos suas dúvidas e entraremos em contato com você em breve!
+            </p>
+        </div>
+
+        <div class="container2">
+            <h3>Formulário de Contato</h3>
+            <form id="contact-form">
+                <div class="input-group">
+                    <div class="form-group">
+                        <input type="text" id="first-name" name="first-name" placeholder="Primeiro Nome *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="last-name" name="last-name" placeholder="Último Nome *" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Seu e-mail *" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="4" placeholder="Sua mensagem" required></textarea>
+                </div>
+                
+                <hr>
+                <div class="grupo">
+                    <button type="submit" class="submit-button">Enviar</button>
+                    <div class="pop" id="popup">
+                        <img src="pop.jpg" alt="pop">
+                        <h2> Obrigada!</h2>
+                        <p> Sua mensagem foi enviada com sucesso.<br>
+                        Responderemos em breve.</p>
+                        <button type="button" onclick="closePopup()" class="botao">Fechar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Direitos Reservados Areia do Infinito</p>
+    </footer>
+    <script>
+        let popup = document.getElementById("popup");
+
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            console.log("Formulário enviado com sucesso"); // Mensagem de verificação
+            openPopup();
+        });
+
+        function openPopup(){
+            console.log("Abrindo pop-up"); // Mensagem de verificação
+            popup.classList.add("open-popup");
+        }
+
+        function closePopup(){
+            popup.classList.remove("open-popup");
+        }
+        // Dropdown do menu
+        function toggleDropdown() {
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const dropdown = document.querySelector('.dropdown');
+            const isClickInside = dropdown.contains(event.target);
+
+            if (!isClickInside) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+// DOT        
+        // Decoração do mouse de bolha seguindo o mouse (se quiser tirar pode tirar)
+        const dot = document.querySelector('.dot');
+
+        document.addEventListener('mousemove', (e) => {
+        // Define a posição da bolinha
+        dot.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
+        dot.style.transform += ' translate(-50%, -295%)'; // Centraliza a bolinha no ponteiro
+        });
+
+
+
+// ANIMAÇÃO DE RECOLHER A PÁGINA
+        window.addEventListener('load', function() {
+            const overlay = document.getElementById('loading-overlay');
+            
+            // Espera 1 segundo para que a animação de recolhimento da bola aconteça
+            setTimeout(() => {
+                overlay.classList.add('hide'); // Adiciona classe para esconder o overlay
+            }, 1000); // Tempo igual ao da animação de encolhimento da bola
+        });
+        
+// ANIMAÇÃO DE EXPANDIR A PÁGINA
+        document.querySelectorAll('.dropdown-content a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Impede o comportamento padrão do link
+        
+                // Captura a posição do mouse no clique
+                const mouseX = event.clientX;
+                const mouseY = event.clientY;
+        
+                // Adiciona a classe para iniciar a animação
+                const overlay = document.getElementById('animation-overlay');
+                
+                // Atualiza a posição do overlay com base no clique
+                overlay.style.left = `${mouseX}px`;
+                overlay.style.top = `${mouseY}px`;
+        
+                // Inicia a animação de expansão
+                overlay.classList.add('active');
+        
+                // Define um tempo para esperar a animação concluir antes de redirecionar
+                setTimeout(() => {
+                    window.location.href = this.href; // Redireciona para o novo site
+                }, 900); // Tempo em milissegundos corresponde à duração da animação
+            });
+            link.addEventListener('click', function(event) {
+    window.location.href = this.href; // Redireciona imediatamente
+});
+
+        });
+    </script>
+</body>
+</html>

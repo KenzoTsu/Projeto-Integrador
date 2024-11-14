@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografia de Malba Tahan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grenze:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="basee.css">
+
+    <style>
+        
+
+        h1 {
+            text-align: center;
+            font-size: 45px;
+            width: 500px;
+            font-family: 'Grenze', serif;
+            font-weight: 700;
+            color: #6B240C; /* Cor do título */
+            margin-bottom: 30px;
+            border-bottom: 3px solid #d4a373; /* Cor da borda do título */
+            display: inline-block;
+            padding-bottom: 10px;
+            transition: color 0.3s ease, transform 0.3s ease; /* Transição suave */
+        }
+
+        h1:hover {
+            color: #b48171; /* Cor ao passar o mouse */
+            transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: center; /* Espaça o h1 e a imagem */
+            align-items: center; /* Alinha verticalmente ao centro */
+            margin-bottom: 30px; /* Espaço abaixo do cabeçalho */
+        }
+
+        .header-img {
+            max-width: auto; /* Ajuste a largura da imagem conforme necessário */
+            height: auto; /* Manter a proporção da imagem */
+            border-radius: 10px; /* Adiciona bordas arredondadas, se desejar */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra para a imagem */
+            align-items: center;
+            width: 100%;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff7e6; /* Cor de fundo do container */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            border: 2px solid #d4a373; /* Cor da borda do container */
+            margin-bottom: 50px;
+            align-items: center;
+        }
+        
+        .card {
+    position: relative; /* Adiciona posicionamento relativo ao card */
+    background-color: #e7d3bf; /* Cor de fundo do cartão */
+    color: #3d2b1f; /* Cor do texto */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 40px 20px 20px; /* Espaçamento interno */
+    margin: 30px 20px; /* Espaçamento externo */
+    width: 46.5%; /* Ajustar largura */
+    display: inline-block; /* Exibe em linha */
+    vertical-align: top; /* Alinha ao topo */
+    transition: transform 0.3s ease; /* Efeito de transição */
+    border: 1px solid #6B240C;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-5px); /* Efeito ao passar o mouse */
+}
+
+.card-title {
+    position: absolute; /* Posiciona o título de forma absoluta */
+    font-size: 20px;
+    line-height: 20px;
+    top: -20px; /* Ajusta a posição do título */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    background-color: #40290a; /* Cor de fundo do título */
+    color: #ffffff; /* Cor do texto do título */
+    text-align: center; /* Centraliza o título */
+    padding: 10px 0; /* Espaçamento interno do título */
+    outline: 1px solid #6B240C;
+    border-radius: 10px 10px 0 0; /* Bordas arredondadas na parte superior */
+} 
+.content-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaça o conteúdo */
+    margin: 30px 0; /* Espaçamento superior e inferior */
+}
+        .text-block-loose {
+            font-size: 22px;
+            line-height: 1.8;
+            width: 70%;
+            padding: 20px;
+            color: #3d2b1f;
+            margin: 25px 0;
+            padding-right: 20px;
+            text-align: justify;
+        }
+        .text-block-loose2 {
+            font-size: 22px;
+            line-height: 1.8;
+            width: 100%;
+            padding: 20px;
+            color: #3d2b1f;
+            margin: 25px 0;
+            padding-right: 20px;
+            text-align: justify;
+        }
+
+        .img-block {
+            width: 35%;
+            text-align: center;
+            margin: 20px 0;
+}
+
+        .img-block img {
+            max-width: 100%;
+            height: auto;
+            width: 300px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border: 3px solid #6B240C; /* Cor da borda da imagem */
+            transition: transform 0.3s ease; /* Adicionando transição suave para a imagem */
+        }
+
+        .img-block img:hover {
+            transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
+        }
+
+        @media (max-width: 1024px) {
+            .card {
+        width: calc(100% - 40px); /* Largura total em telas pequenas */
+    }
+    .header-flex {
+        flex-direction: column; /* Muda para layout em coluna */
+        align-items: center; /* Centraliza o conteúdo */
+    }
+    .header-img, .text-block-loose {
+        width: 100%; /* Faz a imagem e o texto ocuparem toda a largura */
+    }
+    .text-block-loose {
+        font-size: 22px;
+        line-height: 1.8;
+        width: 100%;
+        padding: 20px;
+        color: #3d2b1f;
+        margin: 25px 0;
+    }
+    .img-block {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .content-flex {
+        flex-direction: column-reverse; /* Coloca o texto acima da imagem */
+        align-items: center;
+    }
+}        
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(100% - 40px); /* Largura total em telas pequenas */
+    }
+    .header-flex {
+        flex-direction: column; /* Muda para layout em coluna */
+        align-items: center; /* Centraliza o conteúdo */
+    }
+    .header-img, .text-block-loose {
+        width: 100%; /* Faz a imagem e o texto ocuparem toda a largura */
+    }
+    .text-block-loose {
+        font-size: 22px;
+        line-height: 1.8;
+        width: 100%;
+        padding: 20px;
+        color: #3d2b1f;
+        margin: 25px 0;
+    }
+    .img-block {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .content-flex {
+        flex-direction: column-reverse; /* Coloca o texto acima da imagem */
+        align-items: center;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-c">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+            
+        <a href="biografia-en.html" class="translation">
+            <img src="src/images/translation.png" alt="" style="width: 50px; height: 50px;"/>
+        </a>
+
+        <div class="dropdown">
+            <button class="menu" onclick="toggleDropdown()">
+                <img src="img/menu.png" alt="Menu">
+            </button>
+            <div class="dropdown-content">
+                <div class="button">
+                    <a href="menu.html">Menu</a>
+                </div>
+                <div class="button">
+                    <a href="problema1.html">Problema 1</a>
+                </div>
+                <div class="button">
+                    <a href="problema2.html">Problema 2</a>
+                </div>
+                <div class="button">
+                    <a href="problema3.html">Problema 3</a>
+                </div>
+                <div class="button">
+                    <a href="problema4.html">Problema 4</a>
+                </div>
+                <div class="button">
+                    <a href="biografia.html">Biografia Autor</a>
+                </div>
+                <div class="button">
+                    <a href="Livro.html">Sobre o Livro</a>
+                </div>
+                <div class="button">
+                    <a href="curiosidade.html">Curiosidades</a>
+                </div>
+                <div class="button">
+                    <a href="contato3.html">Contato</a>
+                </div>
+                <div class="button">
+                    <a href="sobre.html">Sobre Nós</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header-flex">
+            <h1>Biografia de Malba Tahan</h1>
+        </div>
+
+        <div class="content-flex">
+            <div class="text-block-loose">
+                Malba Tahan, pseudônimo de Júlio César de Mello e Souza, foi um renomado autor brasileiro, conhecido por sua habilidade em unir matemática e literatura. Nascido em 6 de maio de 1895, no Rio de Janeiro, Tahan foi um educador e escritor que utilizou suas obras para popularizar o raciocínio lógico e a matemática entre crianças e adultos. Sua obra mais famosa, "O Homem que Calculava", tornou-se um clássico da literatura infantojuvenil e destaca a matemática de maneira envolvente e acessível.
+            </div>      
+        
+            <div class="img-block">
+                <img src="img/biografia-a.jpg" alt="#">
+                <p><em>Exemplo de uma imagem.</em></p>
+            </div>
+        </div>        
+
+        <div class="card">
+            <h2 class="card-title"><strong>Infância e Educação</strong></h2>
+            <p>Malba Tahan nasceu no Rio de Janeiro e desde cedo mostrou interesse por matemática e literatura, estudando em instituições renomadas e se dedicando à educação.</p>
+        </div>
+        
+        <div class="card">
+            <h2 class="card-title"><strong>Carreira como Educador</strong></h2>
+            <p>Ele trabalhou como professor de matemática e utilizou sua paixão pela educação para inspirar gerações de alunos a se interessarem pela matemática.</p>
+        </div>
+        
+        <div class="card">
+            <h2 class="card-title"><strong>Pseudônimo Literário</strong></h2>
+            <p>Malba Tahan é um pseudônimo que Tahan adotou para escrever suas obras literárias, combinando sua herança cultural árabe e seu amor pela matemática.</p>
+        </div>
+        
+        <div class="card">
+            <h2 class="card-title"><strong>O Homem que Calculava</strong></h2>
+            <p>Publicada em 1938, sua obra mais famosa e magnífica é uma coletânea de histórias que ilustra conceitos matemáticos através das aventuras de Beremiz Samir.</p>
+        </div>
+        
+        <div class="card">
+            <h2 class="card-title"><strong>Legado</strong></h2>
+            <p>O legado de Malba Tahan permanece vivo, influenciando educadores e estudantes, e suas obras continuam a ser usadas em escolas para ensinar matemática.</p>
+        </div>
+        
+        <div class="card">
+            <h2 class="card-title"><strong>Publicações e Traduções</strong></h2>
+            <p>Além de "O Homem que Calculava", Tahan escreveu várias outras obras, algumas das quais foram traduzidas para diferentes idiomas, ampliando seu alcance internacional.</p>
+        </div>
+
+        <div class="text-block-loose2">
+            Em suma, Malba Tahan deixou um impacto significativo na literatura e na educação, utilizando sua criatividade para tornar a matemática acessível e divertida. Seu trabalho continua a inspirar novas gerações a valorizar o conhecimento e a explorar o mundo da matemática com curiosidade.
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Direitos Reservados Areia do Infinito</p>
+    </footer>
+
+    <div id="animation-overlay"></div>
+    <div class="dot"></div>
+    <div id="loading-overlay">
+        <div class="ball"></div>
+    </div>
+
+    <script src="basee.js"></script>
+</body>
+</html>
