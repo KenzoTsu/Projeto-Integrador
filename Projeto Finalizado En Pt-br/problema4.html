@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pérola Mais Leve - O Homem que Calculava</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grenze:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="basee.css">
+
+    <style>
+        
+
+        h1 {
+            text-align: center;
+            font-family: 'Grenze', serif;
+            font-size: 45px;
+            font-weight: 700;
+            color: #6B240C; /* Cor do título */
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #d4a373; /* Cor da borda do título */
+            display: inline-block;
+            padding-bottom: 10px;
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Adicionando transições suaves */
+        }
+
+        h1:hover {
+            color: #b48171; /* Cor ao passar o mouse */
+            transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff7e6; /* Cor de fundo do container */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            border: 2px solid #d4a373; /* Cor da borda do container */
+            margin-bottom: 50px;
+            align-items: center;
+            width: 100;
+        }
+
+        .text-block {
+            font-size: 22px;
+            line-height: 1.8;
+            background-color: #e7d3bf; /* Cor de fundo do bloco de texto */
+            padding: 20px;
+            border-radius: 10px;
+            color: #3d2b1f; /* Cor do texto no bloco */
+            margin: 25px 0;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #6B240C; /* Cor da borda do bloco de texto */
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Adicionando transições suaves */
+            text-align: justify;
+        }
+
+        .text-block2 {
+            font-size: 22px;
+            line-height: 1.8;
+            background-color: #e7d3bf; /* Cor de fundo do bloco de texto */
+            padding: 20px;
+            border-radius: 10px;
+            color: #3d2b1f; /* Cor do texto no bloco */
+            margin: 10px 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #6B240C; /* Cor da borda do bloco de texto */
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Adicionando transições suaves */
+            text-align: justify;
+            flex: 1;
+        }
+
+        .text-block2:hover {
+            background-color: #e0bd9b; /* Cor de fundo ao passar o mouse */
+            transform: translateY(-5px); /* Levanta o bloco ao passar o mouse */
+        }
+
+        .text-block-container {
+            display: flex; /* Habilita o layout flexível */
+            justify-content: space-between; /* Espaço entre os blocos */
+            flex-wrap: wrap; /* Permite que os blocos se movam para a próxima linha se não houver espaço */
+        }
+
+        .text-block-loose {
+            font-size: 22px;
+            line-height: 1.8;
+            width: 100%;
+            padding: 20px;
+            color: #3d2b1f;
+            margin: 25px 0;
+            text-align: justify;
+        }
+
+        li {
+            margin-left: 30px;  
+        }
+
+        .img-block {
+            text-align: center;
+            margin: 30px -20px;
+        }
+
+        .img-block img {
+            max-width: 100%;
+            height: 300px;
+            width: 500px;
+            margin: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border: 3px solid #6B240C; /* Cor da borda da imagem */
+            transition: transform 0.3s ease; /* Adicionando transição suave para a imagem */
+        }
+
+        .math-expression {
+            font-family: 'Courier New', monospace;
+            background-color: #3d2b1f; /* Cor de fundo da expressão matemática */
+            color: #f4f3ee; /* Cor do texto da expressão matemática */
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* Efeitos de Hover */
+        .text-block:hover {
+            background-color: #e0bd9b; /* Cor de fundo ao passar o mouse */
+            transform: translateY(-5px); /* Levanta o bloco ao passar o mouse */
+        }
+
+        .img-block img:hover {
+            transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
+        }
+
+        @media (max-width: 768px) {
+            .text-block, .img-block {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-c">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+            
+        <a href="problema4-en.html" class="translation">
+            <img src="src/images/translation.png" alt="" style="width: 50px; height: 50px;"/>
+        </a>
+
+        <div class="dropdown">
+            <button class="menu" onclick="toggleDropdown()">
+                <img src="img/menu.png" alt="Menu">
+            </button>
+            <div class="dropdown-content">
+                <div class="button">
+                    <a href="menu.html">Menu</a>
+                </div>
+                <div class="button">
+                    <a href="problema1.html">Problema 1</a>
+                </div>
+                <div class="button">
+                    <a href="problema2.html">Problema 2</a>
+                </div>
+                <div class="button">
+                    <a href="problema3.html">Problema 3</a>
+                </div>
+                <div class="button">
+                    <a href="problema4.html">Problema 4</a>
+                </div>
+                <div class="button">
+                    <a href="biografia.html">Biografia Autor</a>
+                </div>
+                <div class="button">
+                    <a href="Livro.html">Sobre o Livro</a>
+                </div>
+                <div class="button">
+                    <a href="curiosidade.html">Curiosidades</a>
+                </div>
+                <div class="button">
+                    <a href="contato3.html">Contato</a>
+                </div>
+                <div class="button">
+                    <a href="sobre.html">Sobre Nós</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Pérola Mais Leve - O Quarto Problema</h1>
+
+        <div class="text-block-loose">
+            O problema da pérola mais leve é um desafio clássico que Beremiz, o protagonista do livro <em>"O Homem que Calculava"</em>, enfrenta. Neste problema, ele tem 8 pérolas, uma das quais é mais leve que as outras. A meta é descobrir qual pérola é a mais leve utilizando apenas duas pesagens em uma balança de dois pratos.
+        </div>
+
+        <div class="text-block">
+            <strong>Estratégia:</strong>
+            <p>Para resolver o problema, Beremiz divide as pérolas em três grupos:</p>
+            <ul>
+                <li><strong>Grupo A:</strong> 3 pérolas</li>
+                <li><strong>Grupo B:</strong> 3 pérolas</li>
+                <li><strong>Grupo C:</strong> 2 pérolas (as que sobraram)</li>
+            </ul>
+        </div>
+
+        <div class="img-block">
+            <img src="img/problema4-a.jpg" alt="#">
+            <p><em>Exemplo de uma imagem.</em></p>
+        </div>
+
+        <div class="text-block-container">
+            <div class="text-block2">
+                <strong>Primeira Pesagem:</strong>
+                <p>Compare o grupo A com o grupo B:</p>
+                <ul>
+                    <li>Se A igual a B, a pérola mais leve está no grupo C. Para a segunda pesagem, você pesa as duas pérolas do grupo C.</li>
+                    <li>Se A for mais leve que B, a pérola mais leve está no grupo A. Pegue duas pérolas de A e pese-as.</li>
+                    <li>Se B for mais leve que A, a pérola mais leve está no grupo B, seguindo o mesmo raciocínio.</li>
+                </ul>
+            </div>
+        
+            <div class="text-block2">
+                <strong>Resultados da Pesagem:</strong>
+                <p>Após a segunda pesagem, se as duas pesadas forem iguais, a pérola que não foi pesada é a mais leve. Se não forem iguais, a pérola que subir na balança é a resposta.</p>
+            </div>
+        </div>
+
+        <div class="text-block-loose">
+            Esta estratégia ilustra a aplicação do método de divisão e conquista. Beremiz demonstra não apenas a lógica por trás das pesagens, mas também a beleza da matemática em sua resolução.
+        </div>
+
+        <div class="img-block">
+            <img src="img/problema4-b.jpg" alt="#">
+            <p><em>Exemplo de uma imagem.</em></p>
+        </div>
+
+        <div class="text-block">
+            <strong>Conclusão:</strong>
+            <p>Com apenas duas pesagens, Beremiz consegue identificar a pérola mais leve, independentemente de qual grupo contém a pérola diferente. Esta solução é um excelente exemplo da capacidade de raciocínio lógico e eficiência na resolução de problemas.</p>
+            <p>O desafio destaca a importância do pensamento crítico e analítico, habilidades que são essenciais não apenas na matemática, mas em diversas áreas da vida.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Direitos Reservados Areia do Infinito</p>
+    </footer>
+
+    <div id="animation-overlay"></div>
+    <div class="dot"></div>
+    <div id="loading-overlay">
+        <div class="ball"></div>
+    </div>
+
+    <script src="basee.js"></script>
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grenze:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS BASE -->
+    <link rel="stylesheet" href="basee.css">
+    <style>
+        /* Estilos do corpo */
+
+        /* Contêiner principal para texto e formulário */
+        .container {
+            display: flex;
+            /* Flexbox para dividir em duas colunas */
+            width: 100%;
+            /* Largura total do contêiner */
+            max-width: 1920px;
+            /* Limite de largura para telas grandes */
+            align-items: center;
+        }
+
+        /* Estilos do texto à esquerda */
+        .container1 {
+            flex: 0.8;
+            /* Ocupa 40% do espaço */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Centraliza verticalmente */
+            width: 400px;
+            margin-left: 50px;
+        }
+
+        .container1 h1 {
+            color: rgb(68, 67, 67);
+            /* Cor do texto */
+            font-size: 80px;
+            /* Aumentando o tamanho da fonte */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-top: 30px;
+            line-height: 0.85;
+            transition: color 0.3s ease, transform 0.3s ease;
+            /* Transição suave */
+        }
+
+        .container1 h2 {
+            color: #ff0303;
+            /* Cor do texto */
+            font-size: 80px;
+            /* Aumentando o tamanho da fonte */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 0.80;
+            margin-top: 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            /* Transição suave */
+        }
+
+        h1:hover,
+        h2:hover {
+            transform: scale(1.1);
+            /* Aumenta o tamanho ao passar o mouse */
+        }
+
+        .contact-info {
+            font-size: 15px;
+            /* Tamanho da fonte */
+            width: 350px;
+            text-align: left;
+            margin-top: 100px;
+            /* Espaçamento acima do texto */
+            color: rgb(68, 67, 67);
+            /* Cor do texto, ajuste se necessário */
+        }
+
+        .contact-image {
+            max-width: 40px;
+            /* Ajuste a largura máxima conforme necessário */
+            border-radius: 50%;
+            display: block;
+            margin: 0 130px;
+        }
+
+        /* Estilos do formulário */
+        .container2 {
+            background: transparent;
+            /* Fundo do formulário */
+            padding: 20px;
+            width: 600px;
+            /* Ajuste a largura conforme necessário */
+            flex: 1.2;
+            /* Ocupa 60% do espaço */
+            margin-left: 20px;
+            /* Espaçamento à esquerda do formulário */
+            margin-top: 75px;
+            min-height: 300px;
+            /* Ajuste a altura mínima conforme necessário */
+        }
+
+        .container2 h3 {
+            color: rgb(68, 67, 67);
+            font-size: 35px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        hr {
+            margin: 20px 0;
+            /* Espaço acima e abaixo da linha */
+            border: none;
+            /* Remove a borda padrão */
+            height: 2px;
+            /* Altura da linha */
+            background-color: #6b240c;
+            /* Cor da linha */
+        }
+
+        .form-group {
+            position: relative;
+            /* Para posicionar o pseudo-elemento */
+            flex: 1;
+            /* Permite que os grupos de entrada ocupem espaço igual */
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: transparent;
+            width: 100%;
+            /* Faz os campos ocuparem toda a largura */
+            padding: 10px;
+            /* Adiciona espaço interno */
+            font-size: 16px;
+            /* Aumenta o tamanho da fonte */
+            margin-bottom: 15px;
+            /* Espaçamento inferior entre os campos */
+            border: none;
+            /* Remove a borda padrão */
+            outline: none;
+            /* Remove o contorno padrão ao focar */
+        }
+
+        /* Linha abaixo dos inputs */
+        .form-group::after {
+            content: "";
+            /* Necessário para criar um pseudo-elemento */
+            display: block;
+            /* Faz a linha ser um bloco */
+            width: 100%;
+            /* Largura total da linha */
+            height: 2px;
+            /* Altura da linha */
+            background-color: #9a9999;
+            /* Cor padrão da linha (cinza) */
+            position: absolute;
+            /* Posiciona a linha */
+            bottom: 0;
+            /* Fica na parte inferior do campo */
+            left: 0;
+            /* Alinhado à esquerda */
+        }
+
+        /* Cor da linha quando o input é focado */
+        .form-group input:focus~::after,
+        .form-group textarea:focus~::after {
+            background-color: #ff0303;
+            /* Cor da linha ao focar (vermelho) */
+        }
+
+        .input-group {
+            display: flex;
+            /* Usando flexbox para disposição lado a lado */
+            gap: 10px;
+            /* Espaçamento entre os campos */
+        }
+
+        .input-group input {
+            flex: 1;
+            /* Faz cada campo ocupar o espaço restante igualmente */
+            min-width: 0;
+            /* Impede que os campos excedam o espaço disponível */
+        }
+
+        ::placeholder {
+            color: #888;
+            /* Cor do placeholder */
+            font-style: italic;
+            /* Estilo do texto */
+        }
+
+        .submit-button {
+            background-color: #6b240c;
+            /* Cor do botão */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            /* Espaçamento superior */
+            width: 100%;
+            /* Faz o botão ocupar toda a largura */
+        }
+
+        .submit-button:hover {
+            background-color: #ffee82;
+            /* Cor ao passar o mouse */
+        }
+
+        /* Estilos do overlay */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fundo semi-transparente */
+            display: block; /* Sempre visível */
+            z-index: 1000;
+        }
+
+        /* Estilos do pop-up */
+        #popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1001;
+            display: block; /* Sempre visível */
+            max-width: 90%;
+            width: 400px;
+        }
+
+        #popup h2 {
+            margin-top: 0;
+            color: #6b240c;
+        }
+
+        @media (max-width: 768px) {
+    #popup {
+        flex-direction: column; /* Muda a direção do flex para coluna */
+        align-items: flex-start; /* Alinha os itens à esquerda */
+        width: 90%;
+    }
+    @media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Muda a direção do flex para coluna */
+        align-items: flex-start; /* Alinha os itens à esquerda */
+    }
+
+    .container1,
+    .container2 {
+        width: 100%; /* Faz os contêineres ocuparem 100% da largura */
+        margin-left: 20px; /* Remove a margem esquerda */
+        margin-top: 20px; /* Espaçamento entre os contêineres */
+    }
+
+    .container2 {
+        margin-top: 40px; /* Pode ajustar o espaço acima do formulário se necessário */
+        margin-bottom: 40px;
+    }
+}
+};
+    
+
+        #closeBtn {
+            display: none; /* Oculta o botão de fechar */
+            color: #6b240c;
+        }
+
+        .dropdown-content {
+            display: none;
+        }
+
+        .dropdown-content.show {
+            display: block;
+            /* ou outra forma de exibição */
+        }
+        .btn{
+            background-color: #6b240c;
+            color: white;
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <!-- BASE -->
+    <nav>
+        <div class="logo-c">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        <div class="dropdown">
+            <button class="menu" onclick="toggleDropdown()">
+                <img src="img/menu.png" alt="Menu">
+            </button>
+            <div class="dropdown-content">
+                <div class="button">
+                    <a href="menu.html">Menu</a>
+                </div>
+                <div class="button">
+                    <a href="problema1.html">Problema 1</a>
+                </div>
+                <div class="button">
+                    <a href="problema2.html">Problema 2</a>
+                </div>
+                <div class="button">
+                    <a href="problema3.html">Problema 3</a>
+                </div>
+                <div class="button">
+                    <a href="problema4.html">Problema 4</a>
+                </div>
+                <div class="button">
+                    <a href="biografia.html">Biografia Autor</a>
+                </div>
+                <div class="button">
+                    <a href="Livro.html">Sobre o Livro</a>
+                </div>
+                <div class="button">
+                    <a href="curiosidade.html">Curiosidades</a>
+                </div>
+                <div class="button">
+                    <a href="contato3.html">Contato</a>
+                </div>
+                <div class="button">
+                    <a href="sobre.html">Sobre Nós</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <!-- Contêiner principal -->
+        <div class="container1">
+            <h1>Quer falar conosco?</h1>
+            <h2>Entre em contato.</h2>
+            <p class="contact-info">
+                <strong>Quer enviar uma mensagem diretamente?</strong> <strong>Contate este email:</strong>
+                <span>areiadoinfinito@gmail.com</span>
+            </p>
+            <img src="img/contato.png" alt="contato" class="contact-image">
+        </div>
+
+
+        <div class="container2">
+            <h3>Por favor, preencha o formulário abaixo.</h3>
+            <form id="contactForm">
+                <div class="input-group">
+                    <div class="form-group">
+                        <input type="text" id="first-name" name="first-name" placeholder="Primeiro Nome *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="last-name" name="last-name" placeholder="Último Nome *" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Seu e-mail *" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="4" placeholder="Sua mensagem" required></textarea>
+                </div>
+
+                <hr>
+                <button class="submit-button" type="submit">Enviar</button>
+            </form>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Direitos Reservados Areia do Infinito</p>
+    </footer>
+
+    <!-- Pop-up e Overlay -->
+    <div id="overlay"></div>
+
+    <div id="popup">
+        <h2>Mensagem Enviada!</h2>
+        <p>Sua mensagem foi enviada com sucesso. Responderemos em breve.</p>
+        <a href="contato3.html" class="btn"> Fechar</a>
+
+
+    <div id="animation-overlay"></div>
+    <div class="dot"></div>
+
+    <script src="basee.js"></script>
+    <script>
+        // Função para alternar o dropdown do menu
+        function toggleDropdown() {
+            const dropdownContent = document.querySelector('.dropdown-content');
+            dropdownContent.classList.toggle('show');
+        }
+
+        // Fecha o dropdown se o usuário clicar fora dele
+        window.onclick = function (event) {
+            // Verifica se o clique não foi em um menu ou no dropdown
+            if (!event.target.matches('.menu') && !event.target.closest('.dropdown-content')) {
+                const dropdowns = document.querySelectorAll('.dropdown-content');
+                dropdowns.forEach(dropdown => {
+                    if (dropdown.classList.contains('show')) {
+                        dropdown.classList.remove('show');
+                    }
+                });
+            }
+        };
+
+
+        // Seleciona os elementos do pop-up e overlay
+        const overlay = document.getElementById('overlay');
+        const popup = document.getElementById('popup');
+        const closeBtn = document.getElementById('closeBtn');
+        const contactForm = document.getElementById('contactForm');
+
+        // Função para exibir o pop-up
+        function showPopup() {
+            overlay.style.display = 'block';
+            popup.style.display = 'block';
+        }
+
+        // Função para fechar o pop-up
+        function closePopup() {
+            overlay.style.display = 'none';
+            popup.style.display = 'none';
+        }
+
+       
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault(); 
+            showPopup();
+
+            
+            contactForm.reset();
+        });
+
+        window.onload = function () {
+            showPopup();
+        };
+    </script>
+</body>
+
+</html>

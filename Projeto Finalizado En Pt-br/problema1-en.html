@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 1 - Aritmética, Álgebra, Geometria e mais</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grenze:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="basee.css">
+
+    <style>
+        
+
+        h1 {
+            text-align: center;
+            font-family: 'Grenze', serif;
+            font-size: 45px;
+            font-weight: 700;
+            color: #6B240C;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #d4a373;
+            display: inline-block;
+            transition: color 0.3s ease, transform 0.3s ease; /* Transição suave */
+            padding-bottom: 10px;
+        }
+
+        h1:hover {
+            color: #b48171; /* Cor ao passar o mouse */
+            transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+        }
+      
+        .container {
+            max-width: 1300px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff7e6; /* Cor de fundo do container */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            border: 2px solid #d4a373; /* Cor da borda do container */
+            margin-bottom: 50px;
+            align-items: center;
+            width: 100%
+        }
+
+        .text-block {
+            font-size: 22px;
+            line-height: 1.8;
+            width: 700px;
+            background-color: #e7d3bf;
+            padding: 20px;
+            border-radius: 10px;
+            color: #3d2b1f;
+            margin: -8px 0;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #6B240C;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            text-align: justify;
+        }
+
+        .text-block-loose {
+            font-size: 22px;
+            line-height: 1.8;
+            width: 100%;
+            padding: 20px;
+            color: #3d2b1f;
+            margin: 25px 0;
+            text-align: justify;
+        }
+
+        .text-block.full-width {
+            width: 100%;
+            margin: 25px 0;
+            padding: 20px;
+            
+        }
+        
+        .img-block {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .img-block img {
+            max-width: 100%;
+            height: 300px;
+            width: 500px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border: 3px solid #6B240C;
+            transition: transform 0.3s ease;
+        }
+
+        .row-alternate {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .row-alternate:nth-child(even) .text-block {
+            order: 1;
+        }
+
+        .math-expression {
+            font-family: 'Courier New', monospace;
+            background-color: #3d2b1f;
+            color: #f4f3ee;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .text-block:hover {
+            background-color: #e0bd9b;
+            transform: translateY(-5px);
+        }
+
+        .img-block img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 1024px) {
+            .row-alternate {
+                flex-direction: column;
+            }
+
+            .text-block, .img-block {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-c">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        
+        <a href="problema1.html" class="translation">
+            <img src="src/images/translation.png" alt="" style="width: 50px; height: 50px;"/>
+        </a>
+
+        <div class="dropdown">
+            <button class="menu" onclick="toggleDropdown()">
+                <img src="img/menu.png" alt="Menu">
+            </button>
+            <div class="dropdown-content">
+                <div class="button">
+                    <a href="menu-en.html">Home</a>
+                </div>
+                <div class="button">
+                    <a href="problema1-en.html">Problem 1</a>
+                </div>
+                <div class="button">
+                    <a href="problema2-en.html">Problem 2</a>
+                </div>
+                <div class="button">
+                    <a href="problema3-en.html">Problem 3</a>
+                </div>
+                <div class="button">
+                    <a href="problema4-en.html">Problem 4</a>
+                </div>
+                <div class="button">
+                    <a href="biografia-en.html">Biography Author</a>
+                </div>
+                <div class="button">
+                    <a href="Livro-en.html">About the Book</a>
+                </div>
+                <div class="button">
+                    <a href="curiosidade-en.html">Curiosities</a>
+                </div>
+                <div class="button">
+                    <a href="contato3-en.html">Contact</a>
+                </div>
+                <div class="button">
+                    <a href="sobre-en.html">About us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h1>Arithmetic, Algebra, Geometry, and Astronomy. </h1>
+
+        <div class="text-block-loose">
+            The first problem presented in the book is a challenge that involves various fields of knowledge, such as arithmetic, algebra, geometry, mechanics, and astronomy. Beremiz Samir demonstrates his remarkable ability to solve complex issues using these principles.        </div>
+
+        <div class="row-alternate">
+            <div class="text-block">
+                <strong>Arithmetic:</strong>
+                <p>Beremiz used simple calculations of addition, subtraction, multiplication, and division to solve issues involving exact quantities of goods and values.</p>
+            </div>
+            <div class="img-block">
+                <img src="img/problema1-aritmetica.jfif" alt="Exemplo de Aritmética">
+                <p><em>Algebraic equations help solve various problems.</em></p>
+            </div>
+        </div>
+
+        <div class="row-alternate">
+            <div class="img-block">
+                <img src="img/problema1-algebra.jfif" alt="Exemplo de Álgebra">
+                <p><em>Algebraic equations help solve complex problems.</em></p>
+            </div>
+            <div class="text-block">
+                <strong>Algebra:</strong>
+                <p>By using algebraic expressions, Beremiz was able to generalize problems and find solutions to abstract issues.</p>
+            </div>
+        </div>
+
+        <div class="row-alternate">
+            <div class="text-block">
+                <strong>Geometry:</strong>
+                <p>He also demonstrated a deep knowledge of geometry, solving problems involving areas, volumes, and proportions.</p>
+            </div>
+            <div class="img-block">
+                <img src="img/problema1-geometria.jpg" alt="Exemplo de Geometria">
+                <p><em>Geometric figures and calculations related to geometry.</em></p>
+            </div>
+        </div>
+
+        <div class="row-alternate">
+            <div class="img-block">
+                <img src="img/problema1-astronomia.jpg" alt="Exemplo de Astronomia">
+                <p><em>Representation of astronomy, an incredible study.</em></p>
+            </div>
+            <div class="text-block">
+                <strong>Astronomia:</strong>
+                <p>Moreover, Beremiz was well-versed in astronomy, using his knowledge of celestial bodies to make precise navigation calculations.</p>
+            </div>
+        </div>
+
+
+        <div class="text-block-loose">
+            <p>These examples show how Beremiz used mathematics and logic to solve a wide range of problems, integrating different fields of knowledge.</p>
+        </div>
+
+        <div class="text-block full-width">
+            <p>Mathematics is a powerful tool that helps us understand the world around us. Whether in solving everyday problems, developing innovative technologies, or comprehending natural phenomena, its principles are essential. The legacy of Beremiz Samir reminds us that logical reasoning and creativity are fundamental for overcoming challenges, and that the interconnection between various disciplines enriches our learning and our ability to solve problems.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 All Rights Reserved Areia do Infinito.</p>
+    </footer>
+
+    <div id="animation-overlay"></div>
+    <div class="dot"></div>
+    <div id="loading-overlay">
+        <div class="ball"></div>
+    </div>
+
+    <script src="basee.js"></script>
+</body>
+</html>
