@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Os Quatro Quatros - O Homem que Calculava</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grenze:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="basee.css">
+
+    <style>
+        
+
+        h1 {
+            text-align: center;
+            font-family: 'Grenze', serif;
+            font-size: 45px;
+            font-weight: 700;
+            color: #6B240C; /* Cor do título */
+            margin-bottom: 30px;
+            border-bottom: 3px solid #d4a373; /* Cor da borda do título */
+            display: inline-block;
+            padding-bottom: 10px;
+            transition: color 0.3s ease, transform 0.3s ease; /* Transição suave */
+        }
+
+        h1:hover {
+            color: #b48171; /* Cor ao passar o mouse */
+            transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff7e6; /* Cor de fundo do container */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            border: 2px solid #d4a373; /* Cor da borda do container */
+            margin-bottom: 50px;
+            align-items: center;
+            width: 100%
+        }
+
+        .text-block {
+            font-size: 22px;
+            line-height: 1.8;
+            width: 700px;
+            background-color: #e7d3bf; /* Cor de fundo do bloco de texto */
+            padding: 20px;
+            border-radius: 10px;
+            color: #3d2b1f; /* Cor do texto no bloco */
+            margin: -8px 0;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #6B240C; /* Cor da borda do bloco de texto */
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Adicionando transições suaves */
+            margin-bottom: 40px;
+        }
+
+        .text-block.full-width {
+            width: 100%;
+            margin: 25px 0;
+            padding: 20px;
+        }
+
+        .text-block-loose {
+            font-size: 22px;
+            line-height: 1.8;
+            width: 100%;
+            padding: 20px;
+            color: #3d2b1f;
+            margin: 25px 0;
+            text-align: justify;
+        }
+        
+        .img-block {
+            text-align: center;
+            margin: 30px 0;
+            margin-right: 20px;
+        }
+
+        .img-block img {
+            max-width: 100%;
+            height: auto;
+            width: 500px;
+            max-width: 250px;
+            max-height: 300px;
+            margin: -30px 0;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border: 3px solid #6B240C; /* Cor da borda da imagem */
+            transition: transform 0.3s ease; /* Adicionando transição suave para a imagem */
+        }
+
+        .row-alternate {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            
+        }
+
+        .row-alternate:nth-child(even) .text-block {
+            order: 1;
+        }
+
+        .math-expression {
+            font-family: 'Courier New', monospace;
+            background-color: #40290a; /* Cor de fundo da expressão matemática */
+            color: #f4f3ee; /* Cor do texto da expressão matemática */
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* Efeitos de Hover */
+        .text-block:hover {
+            background-color: #e0bd9b; /* Cor de fundo ao passar o mouse */
+            transform: translateY(-5px); /* Levanta o bloco ao passar o mouse */
+        }
+
+        .img-block img:hover {
+            transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
+        }
+
+        /* IMG Background
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('arabesque-pattern.png');
+            opacity: 0.1;
+            z-index: -1;
+        } */
+
+        @media (max-width: 768px) {
+            .row-alternate {
+                flex-direction: column;
+            }
+
+            .text-block, .img-block {
+                width: 100%;
+            }
+        }
+        .row-alternate {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.text-block {
+    flex: 1;
+    margin-right: 20px; /* Espaço entre os blocos */
+}
+
+.text-block:last-child {
+    margin-right: 0; /* Remove margem direita do último bloco */
+}
+
+@media (max-width: 768px) {
+    .row-alternate {
+        flex-direction: column;
+    }
+
+    .text-block {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+    /* Estilos para o contêiner que posiciona os dois divs lado a lado */
+.side-by-side-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Espaçamento entre os blocos */
+    margin-bottom: 40px; /* Espaçamento inferior para separar dos outros conteúdos */
+}
+
+/* Ajustes para os blocos dentro do contêiner */
+.side-by-side-container .text-block.full-width {
+    flex: 0.4;
+}
+.side-by-side-container .text-block-loose {
+    text-align: justify;
+    flex: 1.6;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .side-by-side-container {
+        flex-direction: column;
+    }
+}
+/* Estilos para o contêiner que coloca três blocos lado a lado */
+.three-part-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Espaçamento entre os blocos */
+    margin-bottom: 40px; /* Espaçamento inferior */
+}
+
+/* Ajustes para os blocos internos */
+.three-part-container .text-block {
+    flex: 1; /* Cada bloco ocupa igualmente o espaço disponível */
+    padding: 10px; /* Adiciona espaçamento interno */
+    text-align: justify;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .three-part-container {
+        flex-direction: column;
+    }
+
+    .three-part-container .text-block {
+        width: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-c">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        
+        <a href="problema2.html" class="translation">
+            <img src="src/images/translation.png" alt="" style="width: 50px; height: 50px;"/>
+        </a>
+
+        <div class="dropdown">
+            <button class="menu" onclick="toggleDropdown()">
+                <img src="img/menu.png" alt="Menu">
+            </button>
+            <div class="dropdown-content">
+                <div class="button">
+                    <a href="menu-en.html">Home</a>
+                </div>
+                <div class="button">
+                    <a href="problema1-en.html">Problem 1</a>
+                </div>
+                <div class="button">
+                    <a href="problema2-en.html">Problem 2</a>
+                </div>
+                <div class="button">
+                    <a href="problema3-en.html">Problem 3</a>
+                </div>
+                <div class="button">
+                    <a href="problema4-en.html">Problem 4</a>
+                </div>
+                <div class="button">
+                    <a href="biografia-en.html">Biography Author</a>
+                </div>
+                <div class="button">
+                    <a href="Livro-en.html">About the Book</a>
+                </div>
+                <div class="button">
+                    <a href="curiosidade-en.html">Curiosities</a>
+                </div>
+                <div class="button">
+                    <a href="contato3-en.html">Contact</a>
+                </div>
+                <div class="button">
+                    <a href="sobre-en.html">About us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>
+            The Four Fours - The Second Problem.</h1>
+
+        <!-- Primeira parte em full -->
+        <div class="text-block-loose">
+            In the book <em> "The Man Who Calculated"</em>, by Malba Tahan, the "four fours" problem is an intriguing mathematical challenge. The idea is to use exactly four instances of the number 4 and mathematical operations to represent all the integers from 1 to 100.
+        </div>
+
+        <!-- Primeira linha (Texto à esquerda, imagem à direita) -->
+        <div class="row-alternate">
+            <div class="text-block">
+                <strong>For example, to form the number 1:</strong>
+                <div class="math-expression">(4+4)/(4+4)=1</div>
+
+                <strong>For the number 2:</strong>
+                <div class="math-expression">(4/4)+(4/4)=2</div>
+            </div>
+            <div class="img-block">
+                <img src="img/problema2-a.jpg">
+                <p><em>Exemplo de uma imagem.</em></p>
+            </div>
+        </div>
+
+        <!-- Segunda linha (Imagem à esquerda, texto à direita) -->
+        <!-- Terceira linha (Texto à esquerda, imagem à direita) -->
+
+
+        
+        <div class="row-alternate">
+    <div class="text-block">
+        <strong>For the number 3:</strong>
+        <div class="math-expression">(4+4+4)/4=3</div>
+
+        <strong>For the number 5:</strong>
+        <div class="math-expression">(4+4+4)/4+1=5</div>
+    </div>
+    <div class="text-block">
+        <strong>For the number 6:</strong>
+        <div class="math-expression">(4+4)−(4/4)=6</div>
+
+        <strong>For the number 10:</strong>
+        <div class="math-expression">(4+4)+(4/4)=10</div>
+    </div>
+</div>
+
+
+        <!-- Quarta linha (Imagem à esquerda, texto à direita) -->
+        <div class="row-alternate">
+            <div class="img-block">
+                <img src="img/problema2-b.jpg" alt="#">
+                <p><em>Exemplo de uma imagem.</em></p>
+            </div>
+            <div class="text-block">
+                <strong>For the number 15:</strong>
+                <div class="math-expression">(4×4)−(4/4)=15</div>
+
+                <strong>For the number 20:</strong>
+                <div class="math-expression">4×(4+4)/4=20</div>
+            </div>
+        </div>
+
+        <!-- Última parte em full -->
+        <!-- Novo Contêiner para os dois blocos de texto -->
+<div class="side-by-side-container">
+    <div class="text-block full-width">
+        <strong>For the number 24:</strong>
+        <div class="math-expression">4×4+4−4=24</div>
+    </div>
+
+    <div class="text-block-loose">
+        And so on, using different combinations of operations such as addition, subtraction, multiplication, division, and even functions like square roots or factorials.    </div>
+</div>
+
+
+        <!-- Novo contêiner para os três blocos de texto -->
+        <div class="three-part-container">
+            <div class="text-block">
+                <p>The challenge, in this case, is to find combinations for the numbers and explore mathematical logic. Each number presented stimulates creativity and challenges the mind to think precisely.</p>
+                </div>
+                <div class="text-block">
+                <p>After Beremiz demonstrated his operations with four digits, he captured everyone's attention, showing how mathematics can be intriguing and fun in everyday life, as well as very useful.</p>
+                </div>
+                <div class="text-block">
+                <p>The store clerk, impressed, gifted him a blue turban worth 4 dinars, highlighting the importance of mathematics, knowledge, and intelligence in human relationships.</p>
+            </div>
+
+        </div>
+        
+        
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 All Rights Reserved Areia do Infinito.</p>
+    </footer>
+
+    <div id="animation-overlay"></div>
+    <div class="dot"></div>
+    <div id="loading-overlay">
+        <div class="ball"></div>
+    </div>
+
+    <script src="basee.js"></script>
+</body>
+</html>
